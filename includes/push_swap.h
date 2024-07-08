@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:29:14 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/08 13:59:54 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/08 14:50:47 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,18 @@ void	swap(t_node **head);
 void	sa(t_node **head_a);
 void	sb(t_node **head_b);
 void	ss(t_node **head_a, t_node **head_b);
+
 void	pa(t_node **head_a, t_node **head_b);
 void	pb(t_node **head_a, t_node **head_b);
+
+void	rotate(t_node **head);
+void	ra(t_node **head_a);
+void	rb(t_node **head_b);
+void	rr(t_node **head_a, t_node **head_b);
+
+void	reverse_rotate(t_node **head);
+void	rra(t_node **head_a);
+void	rrb(t_node **head_b);
+void	rrr(t_node **head_a, t_node **head_b);
 
 #endif

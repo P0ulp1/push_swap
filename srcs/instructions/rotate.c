@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 13:42:24 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/08 14:37:53 by phautena         ###   ########.fr       */
+/*   Created: 2024/07/08 14:29:00 by phautena          #+#    #+#             */
+/*   Updated: 2024/07/08 14:51:11 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	pa(t_node **head_a, t_node **head_b)
+void	rotate(t_node **head)
 {
-	int	temp;
+	t_node	*node;
+	int		temp;
 
-	if (get_size(head_b) > 0)
+	node = *head;
+	temp = node->data;
+	while (node->next != NULL)
 	{
-		temp = (*head_b)->data;
-		del_first(head_b);
-		add_to_beg(temp, head_a);
+		node->data = node->next->data;
+		node = node->next;
 	}
-	ft_printf("pa\n");
+	node->data = temp;
 }
 
-void	pb(t_node **head_a, t_node **head_b)
+void	ra(t_node **head_a)
 {
-	int	temp;
+	rotate(head_a);
+	ft_printf("ra\n");
+}
 
-	if (get_size(head_a) > 0)
-	{
-		temp = (*head_a)->data;
-		del_first(head_a);
-		add_to_beg(temp, head_b);
-	}
-	ft_printf("pb\n");
+void	rb(t_node **head_b)
+{
+	rotate(head_b);
+	ft_printf("rb\n");
+}
+
+void	rr(t_node **head_a, t_node **head_b)
+{
+	ra(head_a);
+	rb(head_b);
 }

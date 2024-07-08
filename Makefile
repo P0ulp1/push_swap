@@ -6,14 +6,15 @@
 #    By: phautena <phautena@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 12:24:27 by phautena          #+#    #+#              #
-#    Updated: 2024/07/08 13:46:16 by phautena         ###   ########.fr        #
+#    Updated: 2024/07/08 14:48:49 by phautena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = ./srcs/main.c ./srcs/linked_lists.c ./srcs/parsing.c ./srcs/push_swap_utils.c \
-		./srcs/instructions/swap.c ./srcs/instructions/push.c
+		./srcs/instructions/swap.c ./srcs/instructions/push.c ./srcs/instructions/rotate.c \
+		./srcs/instructions/reverse_rotate.c
 
 CC = cc -Wall -Werror -Wextra -ggdb -g -I./includes/
 

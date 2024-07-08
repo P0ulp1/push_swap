@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:18:11 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/08 14:26:38 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/08 14:56:48 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ int	main(int argc, char *argv[])
 	if (head_a == NULL)
 		return (printf("Error\n"));
 	print_linked_list(head_a);
-	print_linked_list(head_b);
-	pb(&head_a, &head_b);
+	reverse_rotate(&head_a);
 	print_linked_list(head_a);
-	print_linked_list(head_b);
 	return (0);
 }
