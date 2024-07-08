@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 14:28:26 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/08 14:00:41 by phautena         ###   ########.fr       */
+/*   Created: 2024/07/08 13:30:08 by phautena          #+#    #+#             */
+/*   Updated: 2024/07/08 14:00:56 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	get_size(t_node **head)
+void	swap(t_node **head)
 {
 	t_node	*temp;
-	int		i;
 
-	temp = *head;
-	i = 0;
-	while (temp != NULL)
+	if (get_size(head) >= 2)
 	{
-		i++;
-		temp = temp->next;
+		temp = (*head)->next;
+		(*head)->next = temp->next;
+		(*head)->prev = temp;
+		temp->next = (*head);
+		temp->prev = NULL;
+		*head = temp;
 	}
-	return (i);
 }
 
-void	del_first(t_node **head)
+void	sa(t_node **head_a)
 {
-	t_node	*temp;
+	swap(head_a);
+	ft_printf("sa\n");
+}
 
-	if (*head != NULL)
-	{
-		temp = *head;
-		*head = (*head)->next;
-		free(temp);
-	}
+void	sb(t_node **head_b)
+{
+	swap(head_b);
+	ft_printf("sb\n");
+}
+
+void	ss(t_node **head_a, t_node **head_b)
+{
+	sa(head_a);
+	sb(head_b);
 }

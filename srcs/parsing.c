@@ -6,22 +6,21 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:18:58 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/02 15:03:19 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/08 14:00:27 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_node	*ultimate_parser(int argc, char *argv[], t_node *tail)
+void	ultimate_parser(int argc, char *argv[], t_node **head)
 {
 	if (argc > 2)
-		tail = multiple_args_parsing(argc, argv, tail, 0);
+		multiple_args(argc, argv, head, 0);
 	else if (argc == 2)
-		tail = array_parsing(argv[1], tail);
-	return (tail);
+		array_parsing(argv[1], head);
 }
 
-t_node	*multiple_args_parsing(int argc, char *argv[], t_node *tail, int was_string)
+void	multiple_args(int argc, char *argv[], t_node **head, int was_string)
 {
 	int		count;
 
@@ -31,42 +30,36 @@ t_node	*multiple_args_parsing(int argc, char *argv[], t_node *tail, int was_stri
 		count = 0;
 	while (count < argc)
 	{
-		if (isNumber(argv[count]) == true)
+		if (is_number(argv[count]) == true)
 		{
-			tail = add_to_end(tail, ft_atoi(argv[count]));
+			add_to_end(ft_atoi(argv[count]), head);
 			count++;
 		}
 		else
-		{
-			tail = NULL;
-			return (tail);
-		}
+			head = NULL;
 	}
-	return (tail);
+	if (duplicate_check(head) == 1)
+		*head = NULL;
 }
 
-t_node	*array_parsing(char *array, t_node *tail)
+void	array_parsing(char *array, t_node **head)
 {
 	char	**array_splitted;
 	int		i;
-	
-	if (isValid(array) == true)
+
+	if (is_valid(array) == true)
 	{
 		array_splitted = ft_split(array, ' ');
 		i = 0;
 		while (array_splitted[i] != NULL)
 			i++;
-		tail = multiple_args_parsing(i, array_splitted, tail, 1);
-		return (tail);
+		multiple_args(i, array_splitted, head, 1);
 	}
 	else
-	{
-		tail = NULL;
-		return (tail);
-	}
+		head = NULL;
 }
 
-bool	isNumber(char *number)
+bool	is_number(char *number)
 {
 	int	i;
 
@@ -85,16 +78,18 @@ bool	isNumber(char *number)
 	return (true);
 }
 
-bool	isValid(char *array)
+bool	is_valid(char *array)
 {
 	int	i;
 
 	i = 0;
 	while (array[i] != '\0')
 	{
-		if (array[i] == ' ' && ft_isdigit(array[i + 1]) == 1 && array[i + 1] != '+' && array[i + 1] != '-')
+		if (array[i] == ' ' && ft_isdigit(array[i + 1]) == 1
+			&& array[i + 1] != '+' && array[i + 1] != '-')
 			return (false);
-		else if ((array[i] == '+' || array[i] == '-') && ft_isdigit(array[i + 1]) == 1)
+		else if ((array[i] == '+' || array[i] == '-')
+			&& ft_isdigit(array[i + 1]) == 1)
 			return (false);
 		i++;
 	}
