@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:29:14 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/08 14:50:47 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/10 14:24:45 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 typedef struct s_node
 {
 	int				data;
+	int				index;
+	bool			median;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -27,8 +29,6 @@ typedef struct s_node
 void	add_to_empty(int data, t_node **head);
 void	add_to_beg(int data, t_node **head);
 void	add_to_end(int data, t_node **head);
-//t_node	*del_first(t_node *tail);
-//t_node	*del_last(t_node *tail);
 
 void	ultimate_parser(int argc, char *argv[], t_node **head);
 void	multiple_args(int argc, char *argv[], t_node **head, int was_string);
@@ -40,6 +40,9 @@ void	print_linked_list(t_node *tail);
 int		duplicate_check(t_node **head);
 int		get_size(t_node **head);
 void	del_first(t_node **head);
+bool	check(t_node **head_a);
+long	data_pos(t_node **head, int pos);
+t_node	*get_biggest(t_node **head);
 
 void	swap(t_node **head);
 void	sa(t_node **head_a);
@@ -58,5 +61,13 @@ void	reverse_rotate(t_node **head);
 void	rra(t_node **head_a);
 void	rrb(t_node **head_b);
 void	rrr(t_node **head_a, t_node **head_b);
+
+void	three_sort(t_node **head_a);
+void	big_sort(t_node **head_a, t_node **head_b);
+
+void	set_index(t_node **head);
+
+void	ft_free(t_node **head);
+void	free_array(char *argv[]);
 
 #endif

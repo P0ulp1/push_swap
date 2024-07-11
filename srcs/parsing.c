@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:18:58 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/08 15:23:18 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/10 11:11:48 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	array_parsing(char *array, t_node **head)
 		while (array_splitted[i] != NULL)
 			i++;
 		multiple_args(i, array_splitted, head, 1);
+		if (array_splitted != NULL)
+			free_array(array_splitted);
 	}
 	else
 		*head = NULL;
