@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: phautena <phautena@student.42.fr>          +#+  +:+       +#+         #
+#    By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/26 12:24:27 by phautena          #+#    #+#              #
-#    Updated: 2024/07/10 14:27:33 by phautena         ###   ########.fr        #
+#    Updated: 2024/07/16 11:28:36 by p0ulp1           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = push_swap
 SRC = ./srcs/main.c ./srcs/linked_lists.c ./srcs/parsing.c ./srcs/push_swap_utils.c \
 		./srcs/instructions/swap.c ./srcs/instructions/push.c ./srcs/instructions/rotate.c \
 		./srcs/instructions/reverse_rotate.c ./srcs/algorithms/algo_utils.c ./srcs/algorithms/three_sort.c \
-		./srcs/algorithms/big_sort.c \
-		
+		./srcs/algorithms/big_sort.c ./srcs/algorithms/radix_replace.c \
+
 
 CC = cc -Wall -Werror -Wextra -ggdb -g -I./includes/
 

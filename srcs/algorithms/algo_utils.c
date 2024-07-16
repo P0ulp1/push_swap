@@ -6,7 +6,7 @@
 /*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:34:20 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/16 11:09:50 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/07/16 11:27:46 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,4 @@ bool	check(t_node **head_a)
 		node = node->next;
 	}
 	return (true);
-}
-
-void	set_index(t_node **head)
-{
-	t_node	*temp;
-	int		i;
-	int		stack_size;
-
-	temp = *head;
-	i = 0;
-	stack_size = get_size(head);
-	while (i < stack_size)
-	{
-		temp->index = i;
-		if (i >= stack_size / 2)
-			temp->median = true;
-		else
-			temp->median = false;
-		i++;
-		temp = temp->next;
-	}
 }

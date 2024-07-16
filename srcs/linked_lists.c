@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_lists.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:55:40 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 11:42:52 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:38:25 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	add_to_empty(int data, t_node **head)
 	new_node->prev = NULL;
 	new_node->next = NULL;
 	new_node->data = data;
+	new_node->is_replaced = 0;
 	*head = new_node;
 }
 
@@ -38,6 +39,7 @@ void	add_to_beg(int data, t_node **head)
 			return ;
 		new_node->data = data;
 		new_node->prev = NULL;
+		new_node->is_replaced = 0;
 		new_node->next = *head;
 		(*head)->prev = new_node;
 		*head = new_node;
@@ -62,6 +64,7 @@ void	add_to_end(int data, t_node **head)
 		new_node->data = data;
 		new_node->next = NULL;
 		new_node->prev = temp;
+		new_node->is_replaced = 0;
 		temp->next = new_node;
 	}
 }
@@ -86,11 +89,11 @@ int	duplicate_check(t_node **head)
 	return (0);
 }
 
-void	print_linked_list(t_node *head)
+void	print_linked_list(t_node **head)
 {
 	t_node	*temp;
 
-	temp = head;
+	temp = *head;
 	while (temp != NULL)
 	{
 		ft_printf("Value: %d\n", temp->data);

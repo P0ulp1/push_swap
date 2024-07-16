@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 14:17:16 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 14:31:36 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:29:40 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	big_sort(t_node **head_a, t_node **head_b)
 {
-	set_index(head_a);
-	set_index(head_b);
+	(void)head_a;
+	(void)head_b;
 }
 

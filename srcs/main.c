@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:18:11 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 14:25:34 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:37:37 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@ int	main(int argc, char *argv[])
 		else if (get_size(&head_a) == 3)
 			three_sort(&head_a);
 		else
-			big_sort(&head_a, &head_b);
+		{
+			//big_sort(&head_a, &head_b);
+			print_linked_list(&head_a);
+			replace_values(&head_a);
+			print_linked_list(&head_a);
+			(void)head_b;
+		}
 	}
 	else
 		printf("Already Sorted\n");

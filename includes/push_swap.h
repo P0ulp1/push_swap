@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:29:14 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 14:24:45 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:38:32 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@
 typedef struct s_node
 {
 	int				data;
-	int				index;
-	bool			median;
+	int				is_replaced;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -36,7 +35,7 @@ void	array_parsing(char *array, t_node **head);
 
 bool	is_number(char *number);
 bool	is_valid(char *array);
-void	print_linked_list(t_node *tail);
+void	print_linked_list(t_node **head);
 int		duplicate_check(t_node **head);
 int		get_size(t_node **head);
 void	del_first(t_node **head);
@@ -69,5 +68,8 @@ void	set_index(t_node **head);
 
 void	ft_free(t_node **head);
 void	free_array(char *argv[]);
+
+t_node	*find_lowest(t_node **head);
+void	replace_values(t_node **head);
 
 #endif
