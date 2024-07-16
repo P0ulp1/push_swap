@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   x_conversion.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:47:12 by phautena          #+#    #+#             */
-/*   Updated: 2024/06/10 14:15:56 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:08:41 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,7 @@ void	x_conversion(unsigned int n, int *count_ptr)
 	char	*table;
 
 	table = "0123456789abcdef";
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		*count_ptr += 1;
-		n *= -1;
-		x_conversion(n, count_ptr);
-	}
-	else if (n > 15)
+	if (n > 15)
 	{
 		x_conversion(n / 16, count_ptr);
 		x_conversion(n % 16, count_ptr);

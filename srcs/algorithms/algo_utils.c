@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:34:20 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 14:44:13 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:09:50 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,32 +44,5 @@ void	set_index(t_node **head)
 			temp->median = false;
 		i++;
 		temp = temp->next;
-	}
-}
-
-void	set_target(t_node **head_a, t_node **head_b)
-{
-	t_node	*target_node;
-	t_node	*temp_a;
-	t_node	*temp_b;
-	long	closest_big;
-
-	temp_b = *head_b;
-	while (temp_b != NULL)
-	{
-		temp_a = *head_a;
-		closest_big = LONG_MAX;
-		while (temp_a != NULL)
-		{
-			if (temp_a->data > temp_b->data && temp_a->data < closest_big)
-			{
-				closest_big = temp_a->data;
-				target_node = temp_a;
-			}
-			temp_a = temp_a->next;
-		}
-		if (closest_big == LONG_MAX)
-			temp_b = //smallest
-		
 	}
 }
