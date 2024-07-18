@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 09:50:23 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 12:37:49 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/18 14:46:38 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	three_sort(t_node **head_a)
 {
 	t_node	*biggest;
 
-	biggest = get_biggest(head_a);
+	biggest = find_biggest(head_a);
 	if (*head_a == biggest)
 		ra(head_a);
 	else if ((*head_a)->next == biggest)

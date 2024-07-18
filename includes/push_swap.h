@@ -6,7 +6,7 @@
 /*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:29:14 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/16 11:38:32 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/07/18 14:59:18 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int		get_size(t_node **head);
 void	del_first(t_node **head);
 bool	check(t_node **head_a);
 long	data_pos(t_node **head, int pos);
-t_node	*get_biggest(t_node **head);
 
 void	swap(t_node **head);
 void	sa(t_node **head_a);
@@ -62,7 +61,6 @@ void	rrb(t_node **head_b);
 void	rrr(t_node **head_a, t_node **head_b);
 
 void	three_sort(t_node **head_a);
-void	big_sort(t_node **head_a, t_node **head_b);
 
 void	set_index(t_node **head);
 
@@ -70,6 +68,9 @@ void	ft_free(t_node **head);
 void	free_array(char *argv[]);
 
 t_node	*find_lowest(t_node **head);
+t_node	*find_biggest(t_node **head);
+
 void	replace_values(t_node **head);
+void	radix_sort(t_node **head_a, t_node **head_b);
 
 #endif

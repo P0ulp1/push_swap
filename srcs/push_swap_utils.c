@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 14:28:26 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 10:37:06 by phautena         ###   ########.fr       */
+/*   Updated: 2024/07/18 14:44:47 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ long data_pos(t_node **head, int pos)
 	return (1);
 }
 
-t_node	*get_biggest(t_node **head)
+t_node	*find_biggest(t_node **head)
 {
 	t_node	*temp;
 	t_node	*biggest;
