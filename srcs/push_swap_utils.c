@@ -6,7 +6,7 @@
 /*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 14:28:26 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/18 14:44:47 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/07/22 10:27:39 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,18 @@ t_node	*find_biggest(t_node **head)
 		temp = temp->next;
 	}
 	return (biggest);
+}
+
+bool	check(t_node **head_a)
+{
+	t_node	*node;
+
+	node = *head_a;
+	while (node->next != NULL)
+	{
+		if (node->data > node->next->data)
+			return (false);
+		node = node->next;
+	}
+	return (true);
 }
