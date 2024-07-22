@@ -6,7 +6,7 @@
 /*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:41:14 by p0ulp1            #+#    #+#             */
-/*   Updated: 2024/07/22 10:28:45 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/07/22 12:45:36 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	radix_sort(t_node **head_a, t_node **head_b)
 	int		stack_size_a;
 	int		i;
 
-	max_nbr = find_biggest(head_a)->data; //Get max number
+	max_nbr = find_biggest(head_a)->data;
 	max_bits = 0;
-	while (max_nbr >> max_bits != 0) //Get max number of pass needed to sort every digit
+	while (max_nbr >> max_bits != 0)
 		max_bits++;
 	i = 0;
-	while (i < max_bits) //LSD to MSD, i is the current digit
+	while (i < max_bits)
 	{
 		stack_size_a = get_size(head_a);
 		while (stack_size_a-- != 0)
@@ -39,7 +39,7 @@ void	radix_sort(t_node **head_a, t_node **head_b)
 		i++;
 	}
 }
-t_node	*find_lowest(t_node **head)
+t_node	*find_lowest_replace(t_node **head)
 {
 	t_node	*temp;
 	t_node	*lowest;
@@ -73,7 +73,7 @@ void	replace_values(t_node **head)
 	i = 0;
 	while (size != 0)
 	{
-		temp = find_lowest(head);
+		temp = find_lowest_replace(head);
 		temp->data = i;
 		temp->is_replaced = 1;
 		i++;
@@ -92,4 +92,23 @@ void	three_sort(t_node **head_a)
 		rra(head_a);
 	if ((*head_a)->data > (*head_a)->next->data)
 		sa(head_a);
+}
+
+void	five_sort(t_node **head_a, t_node **head_b)
+{
+	replace_values(head_a);
+	while (get_size(head_a) != 3)
+		pb(head_a, head_b);
+	three_sort(head_a);
+	while (*head_a != target_b(head_a, head_b))
+		ra(head_a);
+	pa(head_a, head_b);
+	if (get_size(head_b) != 0)
+	{
+		while (*head_a != target_b(head_a, head_b))
+			ra(head_a);
+		pa(head_a, head_b);
+	}
+	while (check(head_a) != true)
+		ra(head_a);
 }

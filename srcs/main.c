@@ -6,7 +6,7 @@
 /*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:18:11 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/18 15:55:17 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/07/22 11:43:33 by p0ulp1           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char *argv[])
 			sa(&head_a);
 		else if (get_size(&head_a) == 3)
 			three_sort(&head_a);
+		else if (get_size(&head_a) == 5 || get_size(&head_a) == 4)
+			five_sort(&head_a, &head_b);
 		else
 			radix_sort(&head_a, &head_b);
 	}
