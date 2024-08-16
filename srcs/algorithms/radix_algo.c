@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_algo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:41:14 by p0ulp1            #+#    #+#             */
-/*   Updated: 2024/07/22 12:45:36 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/08/16 10:29:26 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	radix_sort(t_node **head_a, t_node **head_b)
 		stack_size_a = get_size(head_a);
 		while (stack_size_a-- != 0)
 		{
-			if ((((*head_a)->data >> i)&1) == 1)
+			if ((((*head_a)->data >> i) & 1) == 1)
 				ra(head_a);
 			else
 				pb(head_a, head_b);
@@ -39,6 +39,7 @@ void	radix_sort(t_node **head_a, t_node **head_b)
 		i++;
 	}
 }
+
 t_node	*find_lowest_replace(t_node **head)
 {
 	t_node	*temp;

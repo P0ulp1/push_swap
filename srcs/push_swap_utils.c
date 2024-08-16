@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 14:28:26 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/22 10:27:39 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/08/16 10:28:44 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	del_first(t_node **head)
 	}
 }
 
-long data_pos(t_node **head, int pos)
+long	data_pos(t_node **head, int pos)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (*head != NULL)
 	{
