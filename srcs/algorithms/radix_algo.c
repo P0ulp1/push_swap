@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:41:14 by p0ulp1            #+#    #+#             */
-/*   Updated: 2024/08/16 10:29:26 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:15:50 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	radix_sort(t_node **head_a, t_node **head_b)
 	int		stack_size_a;
 	int		i;
 
+	replace_values(head_a);
 	max_nbr = find_biggest(head_a)->data;
 	max_bits = 0;
 	while (max_nbr >> max_bits != 0)
