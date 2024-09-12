@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 11:25:55 by p0ulp1            #+#    #+#             */
-/*   Updated: 2024/08/16 10:29:55 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:54:45 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,26 @@ t_node	*find_lowest(t_node **head)
 		}
 	}
 	return (lowest);
+}
+
+void	four_or_five(t_node **head_a, t_node **head_b)
+{
+	if (get_size(head_a) == 4)
+		four_sort(head_a, head_b);
+	else if (get_size(head_a) == 5)
+		five_sort(head_a, head_b);
+}
+
+void	four_sort(t_node **head_a, t_node **head_b)
+{
+	replace_values(head_a);
+	while ((*head_a)->data != 3)
+		ra(head_a);
+	pb(head_a, head_b);
+	three_sort(head_a);
+	pa(head_a, head_b);
+	while (check(head_a) != true)
+		ra(head_a);
+	print_linked_list(head_a);
+	print_linked_list(head_b);
 }

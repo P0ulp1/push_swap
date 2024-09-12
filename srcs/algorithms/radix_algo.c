@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:41:14 by p0ulp1            #+#    #+#             */
-/*   Updated: 2024/09/02 11:15:50 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:13:28 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,18 +99,17 @@ void	three_sort(t_node **head_a)
 void	five_sort(t_node **head_a, t_node **head_b)
 {
 	replace_values(head_a);
-	while (get_size(head_a) != 3)
-		pb(head_a, head_b);
-	three_sort(head_a);
-	while (*head_a != target_b(head_a, head_b))
+	while ((*head_a)->data != 3 && (*head_a)->data != 4)
 		ra(head_a);
+	pb(head_a, head_b);
+	while ((*head_a)->data != 3 && (*head_a)->data != 4)
+		ra(head_a);
+	pb(head_a, head_b);
+	three_sort(head_a);
+	if ((*head_b)->data == 3)
+		sb(head_b);
 	pa(head_a, head_b);
-	if (get_size(head_b) != 0)
-	{
-		while (*head_a != target_b(head_a, head_b))
-			ra(head_a);
-		pa(head_a, head_b);
-	}
+	pa(head_a, head_b);
 	while (check(head_a) != true)
 		ra(head_a);
 }

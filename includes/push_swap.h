@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: p0ulp1 <p0ulp1@student.42.fr>              +#+  +:+       +#+        */
+/*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:29:14 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/22 12:37:56 by p0ulp1           ###   ########.fr       */
+/*   Updated: 2024/09/12 13:52:06 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,8 @@ void	five_sort(t_node **head_a, t_node **head_b);
 
 t_node	*target_b(t_node **head_a, t_node **to_target);
 t_node	*find_lowest(t_node **head);
+
+void	four_or_five(t_node **head_a, t_node **head_b);
+void	four_sort(t_node **head_a, t_node **head_b);
 
 #endif

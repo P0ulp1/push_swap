@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:18:11 by phautena          #+#    #+#             */
-/*   Updated: 2024/09/02 11:10:21 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:52:21 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char *argv[])
 		else if (get_size(&head_a) == 3)
 			three_sort(&head_a);
 		else if (get_size(&head_a) == 4 || get_size(&head_a) == 5)
-			five_sort(&head_a, &head_b);
+			four_or_five(&head_a, &head_b);
 		else
 			radix_sort(&head_a, &head_b);
 	}
