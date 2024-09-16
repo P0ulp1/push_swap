@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:18:58 by phautena          #+#    #+#             */
-/*   Updated: 2024/07/10 11:11:48 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:28:18 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ void	multiple_args(int argc, char *argv[], t_node **head, int was_string)
 		}
 	}
 	if (duplicate_check(head) == 1)
+	{
+		ft_free(head);
 		*head = NULL;
+		return ;
+	}
 }
 
 void	array_parsing(char *array, t_node **head)
@@ -79,7 +83,7 @@ bool	is_number(char *number)
 			i++;
 		else
 			return (false);
-	}	
+	}
 	return (true);
 }
 
