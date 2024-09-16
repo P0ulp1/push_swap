@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:18:58 by phautena          #+#    #+#             */
-/*   Updated: 2024/09/12 15:28:18 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:29:28 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ bool	is_number(char *number)
 	int	i;
 
 	i = 0;
-	if (ft_atoi(number) < INT_MIN || ft_atoi(number) > INT_MAX)
+	if (ft_atoi(number) <= INT_MIN || ft_atoi(number) >= INT_MAX)
 		return (false);
 	else if (number[i] == '-' || number[i] == '+')
 		i++;
