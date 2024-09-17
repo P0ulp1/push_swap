@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:18:58 by phautena          #+#    #+#             */
-/*   Updated: 2024/09/16 18:29:28 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:36:14 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	multiple_args(int argc, char *argv[], t_node **head, int was_string)
 		}
 		else
 		{
+			ft_free(head);
 			*head = NULL;
 			return ;
 		}
