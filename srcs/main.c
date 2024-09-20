@@ -6,7 +6,7 @@
 /*   By: phautena <phautena@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:18:11 by phautena          #+#    #+#             */
-/*   Updated: 2024/09/16 18:28:50 by phautena         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:00:38 by phautena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	if (head_a == NULL)
-		return (printf("Error\n"));
+		return (ft_printf("Error\n"));
 	if (check(&head_a) == false)
 	{
 		if (get_size(&head_a) == 2)
